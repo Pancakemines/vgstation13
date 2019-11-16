@@ -62,6 +62,8 @@
 		update_brightness()
 		if(user)
 			user.update_inv_head()
+	else
+		to_chat(user, "<span class = 'warning'>\The [src] has no linked suit!</span>")
 
 /obj/item/clothing/head/helmet/space/rig/proc/update_brightness()
 	if(on)
@@ -80,10 +82,17 @@
 	..()
 	if(from_slot == slot_head && istype(user))
 		if(rig && rig.is_worn_by(user))
-			rig.deactivate_suit(user)
+			rig.deactivate_suit(user, unequipall = FALSE) //Do not unequip everything if they're just removing their helmet.
 			if(on)
 				toggle_light(user)
 			rig = null
+
+/obj/item/clothing/head/helmet/space/rig/equipped(mob/living/carbon/human/user, var/slot)
+	..()
+	if(user.is_wearing_item(/obj/item/clothing/suit/space/rig, slot_wear_suit))
+		var/obj/item/clothing/suit/space/rig/RS = user.wear_suit
+		if(RS.head_type && istype(src, RS.head_type)) //It's my suit! It was made for me!
+			rig = user.wear_suit
 
 /obj/item/clothing/suit/space/rig
 	name = "engineering hardsuit"
@@ -97,27 +106,52 @@
 	allowed = list(/obj/item/device/flashlight,/obj/item/weapon/tank,/obj/item/weapon/storage/bag/ore,/obj/item/device/t_scanner,/obj/item/weapon/pickaxe, /obj/item/device/rcd, /obj/item/weapon/wrench/socket)
 	max_heat_protection_temperature = SPACE_SUIT_MAX_HEAT_PROTECTION_TEMPERATURE
 	pressure_resistance = 200 * ONE_ATMOSPHERE
-	var/obj/item/clothing/head/helmet/space/rig/H = null
-	var/head_type = /obj/item/clothing/head/helmet/space/rig
-	var/obj/item/weapon/cell/cell = null
-	var/cell_type = /obj/item/weapon/cell/high //The cell_type we're actually using
+	var/activated = FALSE
 	var/list/modules = list()
-	actions_types = list(/datum/action/item_action/toggle_rig_helmet)
+	actions_types = list(/datum/action/item_action/toggle_rig_suit)
+
+	var/obj/item/clothing/head/helmet/space/rig/H = null
+	var/obj/item/clothing/gloves/G = null
+	var/obj/item/clothing/shoes/magboots/MB = null
+	var/obj/item/weapon/tank/T = null
+	var/obj/item/weapon/cell/cell = null
+
+	var/head_type = /obj/item/clothing/head/helmet/space/rig
+	var/boots_type =  null
+	var/gloves_type = null
+	var/tank_type = null
+	var/cell_type = /obj/item/weapon/cell/high //The cell_type we're actually using
 
 /obj/item/clothing/suit/space/rig/New()
 	..()
-	cell = new cell_type
-	H = new head_type
+	if(cell_type)
+		cell = new cell_type(src)
+	if(head_type)
+		H = new head_type(src)
+		H.rig = src
+	if(gloves_type)
+		G = new gloves_type(src)
+	if(boots_type)
+		MB = new boots_type(src)
+	if(tank_type)
+		T = new tank_type(src)
 
 /obj/item/clothing/suit/space/rig/Destroy()
-	qdel(cell)
-	cell = null
-	if(H && (H.loc == src || !H.loc))
-		qdel(H)
+	if(processing_objects.Find(src))
+		processing_objects.Remove(src)
+	for(var/obj/item/I in list(H,G,T,MB))
+		if(I && (I.loc == src || !I.loc))
+			qdel(I)
 	H = null
+	G = null
+	T = null
+	MB = null
 	for(var/obj/M in modules)
 		qdel(M)
 	modules.Cut()
+	if(cell)
+		qdel(cell)
+	cell = null
 	..()
 
 /obj/item/clothing/suit/space/rig/examine(mob/user)
@@ -125,46 +159,145 @@
 	for(var/obj/item/rig_module/M in modules)
 		M.examine_addition(user)
 
+/obj/item/clothing/suit/space/rig/get_cell()
+	return cell
+
 /obj/item/clothing/suit/space/rig/unequipped(mob/living/carbon/human/user, var/from_slot = null)
 	..()
 	if(from_slot == slot_wear_suit && istype(user))
 		deactivate_suit(user)
 
-/obj/item/clothing/suit/space/rig/proc/toggle_helmet(mob/living/carbon/human/user)
+/obj/item/clothing/suit/space/rig/process()
+	if(gcDestroyed)
+		return
+	if(!activated)
+		processing_objects.Remove(src)
+		return
+	if(!ishuman(loc))
+		activated = FALSE
+		return
+	var/mob/living/carbon/human/wearer = loc
+	if(!wearer.is_wearing_item(src, slot_wear_suit))
+		return
+	if(wearer.timestopped)
+		return
+	for(var/obj/item/rig_module/R in modules)
+		if(R.activated && R.active_power_usage)
+			if(!cell.use(R.active_power_usage))
+				R.say_to_wearer("Not enough power available in [src]!")
+				R.deactivate(R.wearer,src)	
+				continue
+			R.do_process()
+
+/obj/item/clothing/suit/space/rig/proc/toggle_suit(mob/living/carbon/human/user)
 	if(!user.is_wearing_item(src, slot_wear_suit))
 		return
-	if(H)
-		if(!user.head)
+	!activated ? initialize_suit(user) : deactivate_suit(user)
+
+/obj/item/clothing/suit/space/rig/proc/initialize_suit(mob/living/carbon/human/user, var/equipall = TRUE)
+	if(equipall)
+		for(var/obj/item/rig_module/priority_module in modules)
+			if(priority_module.requires_component)
+				priority_module.activate(user,src)
+		if(T)
+			if(user.s_store)
+				user.remove_from_mob(user.s_store)
+			to_chat(user, "<span class = 'notice'>\The [T] extends from \the [src].</span>")
+			user.equip_to_slot(T, slot_s_store)
+			T = null
+		if(H)
+			if(user.head)
+				user.remove_from_mob(user.head)
 			to_chat(user, "<span class = 'notice'>\The [H] extends from \the [src].</span>")
 			user.equip_to_slot(H, slot_head)
-			H.rig = src
+			if(!user.internal)
+				user.toggle_internals(user)
 			H = null
-			initialize_suit(user)
-	else
-		if(user.head && istype(user.head, head_type))
-			var/obj/I = user.head
-			to_chat(user, "<span class = 'notice'>\The [I] retracts into \the [src].</span>")
-			user.u_equip(I,0)
-			I.forceMove(src)
-			H = I
-			deactivate_suit(user)
+		if(G)
+			if(user.gloves)
+				user.remove_from_mob(user.gloves)
+			to_chat(user, "<span class = 'notice'>\The [G] extends from \the [src].</span>")
+			user.equip_to_slot(G, slot_gloves)
+			G = null
+		if(MB)
+			if(user.shoes)
+				user.remove_from_mob(user.shoes)
+			to_chat(user, "<span class = 'notice'>\The [MB] extends from \the [src].</span>")
+			user.equip_to_slot(MB, slot_shoes)
+			MB = null
+	for(var/obj/item/rig_module/module in modules)
+		if(!module.activated) //Skip what is already activated.
+			module.activate(user,src)
+	activated = TRUE
+	processing_objects.Add(src)
 
-
-/obj/item/clothing/suit/space/rig/proc/initialize_suit(mob/user)
-	for(var/obj/item/rig_module/R in modules)
-		R.activate(user,src)
-
-/obj/item/clothing/suit/space/rig/proc/deactivate_suit(mob/user)
+/obj/item/clothing/suit/space/rig/proc/deactivate_suit(mob/living/carbon/human/user, var/unequipall = TRUE)
+	if(unequipall)
+		if(head_type && user.head)
+			if(!H)
+				if(istype(user.head, head_type))
+					var/obj/item/clothing/UH = user.head
+					to_chat(user, "<span class = 'notice'>\The [UH] retracts into \the [src].</span>")
+					user.u_equip(UH,0)
+					UH.forceMove(src)
+					H = UH
+				else
+					to_chat(user, "<span class = 'warning'>\The [user.head] isn't compatible with \the [src].</span>")
+		if(gloves_type && user.gloves)
+			if(!G)
+				if(istype(user.gloves, gloves_type))
+					var/obj/item/clothing/UG = user.gloves
+					to_chat(user, "<span class = 'notice'>\The [UG] retracts into \the [src].</span>")
+					user.u_equip(UG,0)
+					UG.forceMove(src)
+					G = UG
+				else
+					to_chat(user, "<span class = 'warning'>\The [user.gloves] isn't compatible with \the [src].</span>")
+		if(tank_type && user.s_store)
+			if(!T)
+				if(istype(user.s_store, tank_type))
+					var/obj/item/weapon/tank/UT = user.s_store
+					to_chat(user, "<span class = 'notice'>\The [UT] retracts into \the [src].</span>")
+					user.u_equip(UT,0)
+					UT.forceMove(src)
+					T = UT
+				else
+					to_chat(user, "<span class = 'warning'>\The [user.s_store] isn't compatible with \the [src].</span>")
+		if(boots_type && user.shoes)
+			if(!MB)
+				if(istype(user.shoes, boots_type))
+					var/obj/item/clothing/UMB = user.shoes
+					to_chat(user, "<span class = 'notice'>\The [UMB] retracts into \the [src].</span>")
+					user.u_equip(UMB,0)
+					UMB.forceMove(src)
+					MB = UMB
+				else
+					to_chat(user, "<span class = 'warning'>\The [user.shoes] isn't compatible with \the [src].</span>")
 	for(var/obj/item/rig_module/R in modules)
 		R.deactivate(user,src)
+	activated = FALSE
+	if(processing_objects.Find(src))
+		processing_objects.Remove(src)
 
 /obj/item/clothing/suit/space/rig/attackby(obj/W, mob/user)
-	if(!H && istype(W, head_type) && user.drop_item(W, src, force_drop = 1))
+	if(head_type && !H && istype(W, head_type) && user.drop_item(W, src, force_drop = TRUE))
 		to_chat(user, "<span class = 'notice'>You attach \the [W] to \the [src].</span>")
 		H = W
+		H.rig = src
+		return
+	if(gloves_type && !G && istype(W, gloves_type) && user.drop_item(W, src, force_drop = TRUE))
+		to_chat(user, "<span class = 'notice'>You attach \the [W] to \the [src].</span>")
+		G = W
+		return
+	if(tank_type && !T && istype(T, tank_type) && user.drop_item(W, src, force_drop = TRUE))
+		to_chat(user, "<span class = 'notice'>You attach \the [W] to \the [src].</span>")
+		T = W
+		return
+	if(boots_type && !MB && istype(W, boots_type) && user.drop_item(W, src, force_drop = TRUE))
+		to_chat(user, "<span class = 'notice'>You attach \the [W] to \the [src].</span>")
+		MB = W
 		return
 	..()
-
 
 //Chief Engineer's rig
 /obj/item/clothing/head/helmet/space/rig/elite
@@ -189,6 +322,13 @@
 	clothing_flags = PLASMAGUARD
 	cell_type = /obj/item/weapon/cell/super
 	head_type = /obj/item/clothing/head/helmet/space/rig/elite
+
+/obj/item/clothing/suit/space/rig/elite/test
+	name = "prototype advanced hardsuit"
+	armor = list(melee = 0, bullet = 0, laser = 0, energy = 100, bomb = 100, bio = 100, rad = 100)
+	gloves_type = /obj/item/clothing/gloves/yellow
+	boots_type = /obj/item/clothing/shoes/magboots/elite
+	tank_type = /obj/item/weapon/tank/emergency_oxygen/double
 
 //Mining rig
 /obj/item/clothing/head/helmet/space/rig/mining
