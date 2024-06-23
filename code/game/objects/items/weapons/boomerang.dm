@@ -55,7 +55,7 @@
 	//Three points are chosen on the circle (at angles 90, 0, -90 - assuming 0 is the direction of the throw)
 	//The boomerang is thrown at the first point, then the second point, then the third point. Then it returns to the thrower's original position
 
-	var/circle_radius = 1+round(get_dist(usr, target) * 0.5) //Dist = 1, radius = 1. Dist = 2, radius = 2. Dist = 3, radius = 2. Dist = 7, radius = 4
+	var/circle_radius = 1+round(min((get_dist(usr, target) * 0.5), 50)) //Dist = 1, radius = 1. Dist = 2, radius = 2. Dist = 3, radius = 2. Dist = 7, radius = 4
 
 	//Get points
 	var/list/points = list()
@@ -66,10 +66,7 @@
 		var/T = get_turf(target)
 
 		for(var/step_n = 1 to circle_radius)
-			if(circle_radius > 50)
-				return
-			else
-				T = get_step(T, m_dir)
+			T = get_step(T, m_dir)
 
 		points.Add(T)
 
