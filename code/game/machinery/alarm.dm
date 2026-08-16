@@ -532,8 +532,13 @@ var/global/list/air_alarms = list()
 		mode=AALARM_MODE_FILL
 		apply_mode()
 
+	var/datum/airalarm_threshold/current_pressure_threshold = config.pressure_threshold
+	var/target_pressure = (current_pressure_threshold.min_1() + current_pressure_threshold.max_1())/2
+	if (mode==AALARM_MODE_FILL && environment.return_pressure()>=target_pressure*0.95)
+		mode=AALARM_MODE_SCRUBBING
+		apply_mode()
 
-	//atmos computer remote controll stuff
+	//atmos computer remote control stuff
 	switch(rcon_setting)
 		if(RCON_NO)
 			remote_control = 0
