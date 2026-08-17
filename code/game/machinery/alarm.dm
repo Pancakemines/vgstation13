@@ -286,9 +286,9 @@
 							GAS_SLEEPING = new /datum/airalarm_threshold(-1, -1, -1, -1),
 							GAS_CRYOTHEUM = new /datum/airalarm_threshold(-1, -1, -1, -1) )
 	other_gas_threshold = new /datum/airalarm_threshold(-1, -1, 0.5, 1)
-	pressure_threshold = new /datum/airalarm_threshold(-1, -1, -1, -1)
-	temperature_threshold = new /datum/airalarm_threshold(T0C-50, T0C-25, T0C+25, T0C+50)
-	target_temperature = T0C
+	pressure_threshold = new /datum/airalarm_threshold(ONE_ATMOSPHERE*0.80, ONE_ATMOSPHERE*0.90, ONE_ATMOSPHERE*1.10, ONE_ATMOSPHERE*1.20)
+	temperature_threshold = new /datum/airalarm_threshold(T0C-30, T0C, T0C+40, T0C+70)
+	target_temperature = T0C+20
 	scrubbed_gases = list( GAS_OXYGEN, GAS_PLASMA )
 
 //these are used for the UIs and new ones can be added and existing ones edited at the CAC
@@ -535,7 +535,7 @@ var/global/list/air_alarms = list()
 	var/datum/airalarm_threshold/current_pressure_threshold = config.pressure_threshold
 	var/target_pressure = (current_pressure_threshold.min_1() + current_pressure_threshold.max_1())/2
 	if (mode==AALARM_MODE_FILL && environment.return_pressure()>=target_pressure*0.95)
-		mode=AALARM_MODE_SCRUBBING
+		mode = AALARM_MODE_SCRUBBING
 		apply_mode()
 
 	//atmos computer remote control stuff
@@ -558,6 +558,14 @@ var/global/list/air_alarms = list()
 			apply_preset(1)
 			auto_suppress = FALSE
 			config.suppression_mode = FALSE
+
+	var/target_temp = config.target_temperature
+	if(preset_key == "Fire Suppression" && environment.return_temperature()<=target_temp*0.95)
+		preset_key = "Human"
+		apply_preset(1)
+		auto_suppress = TRUE
+		config.suppression_mode = TRUE
+
 	return
 
 /obj/machinery/alarm/proc/calculate_local_danger_level(const/datum/gas_mixture/environment)
@@ -783,7 +791,7 @@ var/global/list/air_alarms = list()
 			for(var/device_id in this_area.air_scrub_names)
 				send_signal(device_id, list("power"= 0) )
 			for(var/device_id in this_area.air_vent_names)
-				send_signal(device_id, list("power"= 1, "checks"= 1, "set_external_pressure"= target_pressure) )
+				send_signal(device_id, list("power"= 1, "checks"= 0, "set_external_pressure"= target_pressure) )
 
 		if(AALARM_MODE_OFF)
 			for(var/device_id in this_area.air_scrub_names)
