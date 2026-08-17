@@ -6810,6 +6810,10 @@
 	dir = 1;
 	on = 1
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/courtroom)
 "alS" = (
@@ -7831,8 +7835,7 @@
 	dir = 4
 	},
 /obj/machinery/alarm{
-	pixel_y = 24;
-	target_temperature = 73.15
+	pixel_y = 28
 	},
 /turf/simulated/floor{
 	dir = 1;
@@ -8643,6 +8646,10 @@
 /obj/structure/cable/yellow{
 	d2 = 2;
 	icon_state = "0-2"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -11621,6 +11628,9 @@
 	d1 = 1;
 	d2 = 4;
 	icon_state = "1-4"
+	},
+/obj/machinery/firealarm{
+	pixel_y = -29
 	},
 /turf/simulated/floor{
 	dir = 10;
@@ -18134,6 +18144,10 @@
 /area/science/robotics)
 "aEF" = (
 /obj/structure/flora/pottedplant/random,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "cafeteria"
@@ -21292,6 +21306,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "neutralcorner"
@@ -21388,6 +21406,10 @@
 /area/hallway/primary/central)
 "aKI" = (
 /obj/machinery/portable_atmospherics/canister/oxygen,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -24657,6 +24679,10 @@
 /obj/structure/cable/yellow{
 	d2 = 8;
 	icon_state = "0-8"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -33675,6 +33701,10 @@
 /turf/simulated/floor,
 /area/storage/primary)
 "bfs" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor/plating,
 /area/storage/tech)
 "bft" = (
@@ -35390,6 +35420,10 @@
 	icon_state = "warning";
 	tag = "icon-warning (NORTHEAST)"
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor/plating,
 /area/turret_protected/tcomms_control_room)
 "bhU" = (
@@ -35591,6 +35625,8 @@
 	pixel_y = -32
 	},
 /obj/item/device/multitool,
+/obj/item/device/radio,
+/obj/item/device/radio,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -35999,6 +36035,10 @@
 /area/maintenance/port)
 "bjb" = (
 /obj/structure/closet/toolcloset,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
 /turf/simulated/floor{
 	icon_state = "dark vault stripe"
 	},
@@ -38794,6 +38834,9 @@
 	pixel_y = 5
 	},
 /obj/item/weapon/storage/box/foam,
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/simulated/floor{
 	icon_state = "darkyellowfull";
 	tag = "icon-darkyellowfull"
@@ -39561,6 +39604,9 @@
 /obj/item/stack/rcd_ammo/ce,
 /obj/item/device/rcd/matter/engineering/pre_loaded/adv{
 	pixel_y = 8
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /turf/simulated/floor{
 	dir = 4;
@@ -69952,6 +69998,12 @@
 /obj/machinery/suit_storage_unit/standard_unit,
 /turf/simulated/floor/shuttle,
 /area/shuttle/exploration)
+"ffF" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/simulated/floor/plating,
+/area/engineering/engine_storage)
 "fkA" = (
 /obj/structure/bed/chair{
 	dir = 1
@@ -70204,6 +70256,15 @@
 /obj/abstract/map/spawner/library,
 /turf/simulated/floor/wood,
 /area/library)
+"hca" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
+/turf/simulated/floor{
+	icon_state = "cmo"
+	},
+/area/medical/cmo)
 "hoK" = (
 /obj/structure/table,
 /obj/item/weapon/paper/pamphlet,
@@ -71356,6 +71417,15 @@
 	icon_state = "dark"
 	},
 /area/vox_trading_post/eva)
+"nwO" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/captain{
+	name = "\improper Captain's Quarters"
+	})
 "nxM" = (
 /obj/structure/window/reinforced{
 	dir = 8
@@ -71640,6 +71710,14 @@
 	tag = "icon-showroomfloor (NORTH)"
 	},
 /area/library)
+"qkz" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
+/area/lawoffice)
 "qnf" = (
 /obj/structure/cable/yellow{
 	d1 = 4;
@@ -169286,7 +169364,7 @@ aRS
 aTw
 aUN
 aQy
-aXh
+qkz
 ncC
 aZo
 bau
@@ -176337,7 +176415,7 @@ ble
 blI
 bjp
 bjp
-blH
+ffF
 bod
 boz
 boY
@@ -187310,7 +187388,7 @@ adu
 adR
 aeo
 aeU
-afx
+nwO
 adu
 adu
 agz
@@ -198908,7 +198986,7 @@ mVw
 aYT
 aZZ
 bbg
-bbg
+hca
 aYR
 bdS
 beL
