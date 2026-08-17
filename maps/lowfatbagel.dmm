@@ -10413,6 +10413,11 @@
 	},
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layered,
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layered,
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/holocontrol)
 "aCz" = (
@@ -10475,6 +10480,11 @@
 /area/mine/production)
 "aCN" = (
 /obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -14999,6 +15009,11 @@
 /area/lawoffice)
 "aOM" = (
 /obj/machinery/computer/ordercomp,
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
 /turf/simulated/floor,
 /area/supply/lobby)
 "aOO" = (
@@ -23682,6 +23697,11 @@
 /obj/item/weapon/storage/bag/plasticbag,
 /obj/item/stack/package_wrap,
 /obj/item/weapon/storage/belt/slim,
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor,
 /area/storage/primary)
 "bmR" = (
@@ -28207,6 +28227,10 @@
 	},
 /obj/effect/landmark/start{
 	name = "Xenoarchaeologist"
+	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
 	},
 /turf/simulated/floor{
 	dir = 9;
@@ -34980,6 +35004,15 @@
 	icon_state = "white"
 	},
 /area/medical/chemistry)
+"ddc" = (
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/science/hallway)
 "ddk" = (
 /obj/machinery/ert_cryo_cell,
 /turf/simulated/floor/bluegrid,
@@ -35081,6 +35114,15 @@
 	},
 /turf/simulated/floor/plating/airless,
 /area)
+"deV" = (
+/obj/item/weapon/stool,
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
+/turf/simulated/floor,
+/area/storage/tools)
 "deW" = (
 /obj/structure/cable/yellow{
 	d1 = 1;
@@ -37729,6 +37771,16 @@
 	},
 /turf/simulated/wall/r_wall,
 /area/research_outpost/hallway)
+"dTk" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/medical/cryo)
 "dTs" = (
 /obj/structure/bed/chair/office/dark,
 /turf/simulated/floor{
@@ -40602,6 +40654,10 @@
 	name = "reinforced window"
 	},
 /obj/structure/window/full/reinforced,
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor/plating,
 /area/crew_quarters/heads/ce)
 "eEh" = (
@@ -40817,6 +40873,10 @@
 /obj/machinery/meter,
 /obj/machinery/atmospherics/pipe/manifold/yellow/visible{
 	dir = 1
+	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -41462,6 +41522,10 @@
 /area/centcom/ert)
 "eRN" = (
 /obj/structure/bed/chair,
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -42021,6 +42085,19 @@
 	icon_state = "redbluefull"
 	},
 /area/tdome/tdomeobserve)
+"eZY" = (
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
+/area/chapel/office)
 "fad" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layered{
 	dir = 4;
@@ -51358,6 +51435,10 @@
 /obj/item/stack/rcd_ammo/ce,
 /obj/item/device/rcd/matter/engineering/pre_loaded/adv{
 	pixel_y = 8
+	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/heads/ce)
@@ -61451,6 +61532,15 @@
 	icon_state = "floor4"
 	},
 /area/shuttle/administration/centcom)
+"kBP" = (
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
+/turf/simulated/floor{
+	icon_state = "white"
+	},
+/area/security/medical)
 "kCc" = (
 /obj/machinery/gibber,
 /turf/unsimulated/floor{
@@ -67650,6 +67740,28 @@
 "mqh" = (
 /turf/unsimulated/mineral,
 /area/mine/explored)
+"mqj" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layered{
+	dir = 4;
+	tag = "icon-intact (EAST)"
+	},
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layered{
+	dir = 4;
+	tag = "icon-intact (EAST)"
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "yellowsiding";
+	tag = "icon-yellowsiding"
+	},
+/area/hallway/secondary/entry)
 "mqr" = (
 /obj/structure/bed/chair/wood/wings{
 	dir = 4
@@ -74571,6 +74683,14 @@
 	},
 /turf/simulated/floor/wood,
 /area/research_outpost/hallway)
+"omi" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/sleep)
 "omv" = (
 /obj/structure/cable/orange{
 	d1 = 1;
@@ -75241,6 +75361,21 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/asmaint)
+"ovC" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layered,
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layered,
+/obj/structure/cable{
+	d1 = 1;
+	d2 = 2;
+	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
+/turf/simulated/floor/wood,
+/area/medical/break_room)
 "ovO" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden/layered{
 	dir = 4;
@@ -76540,6 +76675,18 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
 /turf/simulated/floor/wood,
 /area/research_outpost/hallway)
+"oOd" = (
+/obj/item/device/flashlight/lamp,
+/obj/structure/table/woodentable,
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
+/turf/simulated/floor/carpet{
+	icon_state = "carpetnoconnect"
+	},
+/area/security/rec_room)
 "oOn" = (
 /obj/machinery/faxmachine{
 	department = "Central Command"
@@ -76860,6 +77007,11 @@
 /obj/effect/decal/warning_stripes{
 	dir = 1;
 	icon_state = "warning"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
 	},
 /turf/simulated/floor,
 /area/engineering/engine_storage)
@@ -79677,6 +79829,16 @@
 	icon_state = "white"
 	},
 /area/research_outpost/hallway)
+"pMA" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
+/turf/simulated/floor{
+	icon_state = "floorgrime"
+	},
+/area/crew_quarters/fitness)
 "pMO" = (
 /obj/structure/closet/emcloset,
 /turf/unsimulated/floor/asteroid,
@@ -90883,6 +91045,23 @@
 	icon_state = "cafeteria"
 	},
 /area/centcom/living)
+"tcH" = (
+/obj/machinery/atmospherics/pipe/simple/supply/hidden/layered{
+	dir = 4;
+	tag = "icon-intact (EAST)"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden/layered{
+	dir = 4;
+	tag = "icon-intact (EAST)"
+	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/security/brig)
 "tcL" = (
 /obj/effect/landmark{
 	name = "tdome2"
@@ -94070,6 +94249,8 @@
 	},
 /obj/item/clothing/gloves/yellow,
 /obj/item/device/multitool,
+/obj/item/device/radio,
+/obj/item/device/radio,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -206505,7 +206686,7 @@ pTQ
 kqD
 hZn
 mFP
-iHi
+dTk
 uUV
 lwx
 paW
@@ -212500,7 +212681,7 @@ sBY
 dtg
 aCw
 hNy
-hNy
+ovC
 woe
 bAy
 kXn
@@ -219068,7 +219249,7 @@ bxa
 crk
 bxa
 cJo
-dgt
+ddc
 daS
 gqY
 aYL
@@ -228055,7 +228236,7 @@ bbs
 dnb
 bcb
 bfz
-azE
+pMA
 bjl
 bkS
 bng
@@ -228618,7 +228799,7 @@ pur
 bla
 bla
 bla
-dnr
+deV
 oQW
 wtc
 swb
@@ -233564,7 +233745,7 @@ aGc
 mOl
 aJk
 aGv
-btI
+omi
 btI
 bsZ
 aRG
@@ -238566,7 +238747,7 @@ aiw
 aiw
 aiw
 aiw
-aRc
+mqj
 abI
 eUH
 asn
@@ -253638,7 +253819,7 @@ aAh
 aBT
 aDA
 aEy
-aFB
+eZY
 aAh
 acK
 aqj
@@ -265729,7 +265910,7 @@ aNy
 aNy
 aNy
 oVR
-sRF
+kBP
 sRF
 kaW
 wRl
@@ -269747,7 +269928,7 @@ aaa
 eFc
 tUt
 jVD
-mEy
+oOd
 qKe
 mEy
 elj
@@ -270263,7 +270444,7 @@ tXi
 bLs
 fDc
 elj
-uIK
+tcH
 qcZ
 mzo
 eKI
