@@ -9640,6 +9640,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "neutral"
@@ -18498,6 +18502,10 @@
 	name = "Engineering AME Room";
 	network = list("Engineering","SS13")
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "dark vault stripe"
@@ -25450,6 +25458,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
 	},
 /turf/simulated/floor{
 	dir = 5;
@@ -38689,6 +38701,9 @@
 /obj/effect/decal/warning_stripes{
 	icon_state = "bot"
 	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "dark"
@@ -41866,6 +41881,9 @@
 	},
 /obj/item/device/radio/intercom/medbay{
 	pixel_x = -28
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /turf/simulated/floor{
 	dir = 9;
@@ -47915,6 +47933,10 @@
 	dir = 1;
 	name = "Gateway"
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
 /turf/simulated/floor,
 /area/gateway)
 "bHW" = (
@@ -48830,6 +48852,10 @@
 /obj/item/weapon/storage/firstaid/toxin{
 	pixel_x = -2;
 	pixel_y = 6
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -50995,6 +51021,10 @@
 /obj/machinery/camera{
 	dir = 8;
 	name = "Morgue East"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
 	},
 /turf/simulated/floor{
 	icon_state = "freezerfloor"
@@ -53542,6 +53572,10 @@
 	},
 /obj/structure/bed/chair{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
 	},
 /turf/simulated/floor,
 /area/medical/medbay)
@@ -63001,6 +63035,9 @@
 /area/science/mixing)
 "ckQ" = (
 /obj/machinery/atmospherics/unary/portables_connector,
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "whitepurple"
@@ -65525,6 +65562,10 @@
 	},
 /obj/effect/landmark/start{
 	name = "Xenoarchaeologist"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
 	},
 /turf/simulated/floor{
 	dir = 4;
@@ -99147,6 +99188,15 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/starboard)
+"lHl" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
+/turf/simulated/floor{
+	icon_state = "dark vault full"
+	},
+/area/turret_protected/tcomms_control_room)
 "lPe" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -99189,6 +99239,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/security/hos)
+"mpf" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -25
+	},
+/turf/simulated/floor,
+/area/hallway/secondary/entry)
 "mtF" = (
 /obj/machinery/sleeper,
 /turf/simulated/floor/shuttle,
@@ -99690,6 +99747,13 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/port)
+"qlM" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
+/turf/simulated/floor,
+/area/supply/storage)
 "qme" = (
 /obj/machinery/light,
 /obj/machinery/door/firedoor/border_only{
@@ -99881,6 +99945,10 @@
 /obj/item/weapon/paper_bin/purple{
 	pixel_x = 1;
 	pixel_y = 9
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
 	},
 /turf/simulated/floor/carpet,
 /area/science/breakroom{
@@ -100453,6 +100521,15 @@
 /obj/machinery/hologram/holopad,
 /turf/simulated/floor,
 /area/storage/eva)
+"wDF" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault"
+	},
+/area/teleporter)
 "wMc" = (
 /obj/structure/table/reinforced,
 /turf/simulated/floor{
@@ -100584,6 +100661,16 @@
 	},
 /turf/simulated/floor,
 /area/security/range)
+"xKn" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault"
+	},
+/area/engineering/engine_storage)
 "xTE" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor{
@@ -196260,7 +196347,7 @@ azN
 aBo
 aBo
 aEi
-aFN
+xKn
 aHo
 aIy
 azN
@@ -204289,7 +204376,7 @@ awg
 anx
 ayF
 azX
-ayB
+lHl
 aCW
 aEl
 aFS
@@ -217368,7 +217455,7 @@ biy
 bit
 bfR
 blq
-bmL
+wDF
 bmL
 bom
 blq
@@ -236446,7 +236533,7 @@ bkK
 blO
 aZL
 aZL
-aZL
+qlM
 aZH
 bqz
 bru
@@ -253030,7 +253117,7 @@ bGd
 bHA
 bIQ
 bKr
-bwx
+mpf
 bNd
 bOB
 bQh
