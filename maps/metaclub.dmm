@@ -4058,6 +4058,10 @@
 	name = "Interrogation";
 	network = list("Interrogation")
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor,
 /area/security/interrogation)
 "akI" = (
@@ -22242,6 +22246,10 @@
 /obj/machinery/faxmachine{
 	department = "Quartermaster's Office"
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor,
 /area/supply/qm)
 "aTz" = (
@@ -28545,6 +28553,10 @@
 "beA" = (
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -39648,8 +39660,9 @@
 /turf/simulated/floor,
 /area/hallway/primary/central)
 "bxO" = (
-/obj/machinery/light_switch{
-	pixel_x = -25
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/heads/hop)
@@ -45342,6 +45355,8 @@
 	pixel_x = -3;
 	pixel_y = 3
 	},
+/obj/item/device/radio,
+/obj/item/device/radio,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -51632,6 +51647,9 @@
 	},
 /obj/item/device/rcd/rpd,
 /obj/item/device/rcd/rpd,
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "caution"
@@ -67291,6 +67309,10 @@
 	dir = 4
 	},
 /obj/machinery/computer/med_data,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -117572,6 +117594,16 @@
 	tag = "icon-darkred (EAST)"
 	},
 /area/prison)
+"fAv" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "whiteblue"
+	},
+/area/medical/genetics)
 "fBa" = (
 /obj/effect/decal/cleanable/blood,
 /turf/unsimulated/floor/asteroid,
@@ -118164,6 +118196,17 @@
 	dir = 10
 	},
 /area/hallway/secondary/entry)
+"hrl" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "vault";
+	tag = "icon-vault (NORTHEAST)"
+	},
+/area/chapel/main)
 "hsT" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -120102,6 +120145,10 @@
 	dir = 1;
 	name = "Secure Armory"
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -120705,6 +120752,18 @@
 	},
 /turf/simulated/floor/plating,
 /area/maintenance/fore)
+"sdm" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "dark vault stripe"
+	},
+/area/ai_monitored/storage/eva{
+	name = "E.V.A. Storage"
+	})
 "seN" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -121413,6 +121472,15 @@
 	},
 /turf/simulated/floor,
 /area/security/armory)
+"uZT" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/turret_protected/aisat)
 "vaw" = (
 /obj/machinery/door/airlock/external{
 	name = "Arrival Airlock"
@@ -224852,7 +224920,7 @@ cPy
 cQm
 cQZ
 cKF
-cSp
+hrl
 cSO
 cTh
 cTG
@@ -230356,7 +230424,7 @@ czn
 cAq
 cBv
 cCi
-cDb
+fAv
 cDX
 cEV
 cEV
@@ -237858,7 +237926,7 @@ bPR
 bPR
 bPR
 bPR
-bRr
+sdm
 bMF
 bYY
 bxw
@@ -282019,7 +282087,7 @@ bqs
 bsp
 buJ
 bwU
-bsp
+uZT
 bqs
 bhj
 aTg
