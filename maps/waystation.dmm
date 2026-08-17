@@ -1981,6 +1981,10 @@
 	pixel_x = -1;
 	pixel_y = -1
 	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -9025,6 +9029,11 @@
 /area/supply/storage)
 "cfb" = (
 /obj/structure/flora/pottedplant/random,
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	dir = 10;
 	icon_state = "red"
@@ -12550,6 +12559,11 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -14054,6 +14068,11 @@
 	d1 = 2;
 	d2 = 4;
 	icon_state = "2-4"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
 	},
 /turf/simulated/floor/plating,
 /area/storage/tech)
@@ -19230,6 +19249,10 @@
 	dir = 1
 	},
 /obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "cafeteria"
@@ -19935,6 +19958,10 @@
 /obj/structure/cable/orange{
 	d2 = 4;
 	icon_state = "0-4"
+	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
 	},
 /turf/simulated/floor{
 	dir = 9;
@@ -21825,6 +21852,10 @@
 	},
 /obj/machinery/atmospherics/unary/tank/air{
 	dir = 1
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -44565,6 +44596,11 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
 /turf/simulated/floor/plating,
 /area/engineering/engine_storage)
 "kMT" = (
@@ -56565,9 +56601,8 @@
 	},
 /area/crew_quarters/sleep)
 "nEH" = (
-/obj/structure/sign/poster{
-	icon_state = "poster6";
-	pixel_y = 32
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /obj/machinery/atmospherics/unary/vent_pump{
 	on = 1
@@ -59392,6 +59427,9 @@
 /obj/structure/disposalpipe/segment{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "whitepurple"
@@ -59935,6 +59973,11 @@
 /obj/effect/decal/warning_stripes{
 	icon_state = "warning";
 	tag = "icon-warning (NORTH)"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
 	},
 /turf/simulated/floor,
 /area/engineering/burn_chamber{
@@ -61173,6 +61216,11 @@
 /obj/item/weapon/table_parts/wood/poker,
 /obj/machinery/light/small{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
 	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/bar{
@@ -64388,6 +64436,10 @@
 /obj/machinery/light{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -65600,6 +65652,8 @@
 "pVt" = (
 /obj/structure/table,
 /obj/item/device/multitool,
+/obj/item/device/radio,
+/obj/item/device/radio,
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -71844,6 +71898,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
 	},
 /turf/simulated/floor{
 	dir = 10;
@@ -78831,6 +78889,11 @@
 	pixel_y = -3
 	},
 /obj/item/toy/gasha/doctor,
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -79101,6 +79164,11 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	icon_state = "dark vault stripe"
 	},
