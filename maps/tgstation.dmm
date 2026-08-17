@@ -7214,6 +7214,10 @@
 /obj/machinery/light_switch{
 	pixel_y = 27
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "red"
@@ -7405,6 +7409,9 @@
 /obj/item/tool/crowbar,
 /obj/item/device/radio,
 /obj/item/tool/wrench,
+/obj/machinery/firealarm{
+	pixel_y = 27
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -7500,6 +7507,10 @@
 	pixel_y = 7
 	},
 /obj/item/weapon/pen,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -24735,6 +24746,12 @@
 /obj/machinery/atmospherics/unary/vent_scrubber/on{
 	dir = 8
 	},
+/obj/machinery/firealarm{
+	pixel_y = 24
+	},
+/obj/machinery/firealarm{
+	pixel_y = -24
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters/theatre)
 "aTR" = (
@@ -27358,6 +27375,10 @@
 "aZb" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
 	},
 /turf/simulated/floor{
 	icon_state = "grimy"
@@ -36129,6 +36150,10 @@
 /area/janitor)
 "bqA" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -45262,6 +45287,10 @@
 /obj/item/device/camera,
 /obj/item/weapon/storage/photo_album{
 	pixel_y = -10
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/captain)
@@ -58099,6 +58128,10 @@
 /area/medical/cmo)
 "ceT" = (
 /obj/structure/flora/pottedplant/random,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "barber"
@@ -65340,6 +65373,9 @@
 "csX" = (
 /obj/structure/table/reinforced,
 /obj/item/device/multitool,
+/obj/item/device/radio{
+	pixel_x = 3
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -66324,6 +66360,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -66716,6 +66756,10 @@
 	},
 /obj/abstract/map/spawner/pick_spawner/yellowgloves/tcomms_storage,
 /obj/structure/bed/chair,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -67558,6 +67602,10 @@
 	icon_state = "bot"
 	},
 /obj/abstract/map/spawner/pick_spawner/yellowgloves/technicalstorage,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -72283,8 +72331,8 @@
 	},
 /area/engineering/ce)
 "cFo" = (
-/obj/machinery/newscaster{
-	pixel_y = 32
+/obj/machinery/firealarm{
+	pixel_y = 24
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -115142,9 +115190,11 @@
 	},
 /area/medical/surgery_ghetto)
 "kKH" = (
-/obj/machinery/status_display,
-/turf/simulated/wall/r_wall,
-/area/maintenance/virology_maint)
+/obj/machinery/firealarm{
+	pixel_y = 23
+	},
+/turf/space,
+/area)
 "kLr" = (
 /obj/structure/grille,
 /obj/structure/window/reinforced{
@@ -116432,6 +116482,17 @@
 	icon_state = "white"
 	},
 /area/research_outpost/hallway)
+"vGc" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/simulated/floor{
+	dir = 5;
+	icon_state = "checker";
+	tag = "icon-checker (NORTHEAST)"
+	},
+/area/science/rd)
 "vHy" = (
 /obj/structure/table,
 /obj/item/weapon/paper_bin/white,
@@ -116666,6 +116727,10 @@
 	},
 /obj/machinery/light{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
 	},
 /turf/simulated/floor{
 	dir = 8;
@@ -244022,7 +244087,7 @@ aaa
 aaa
 aaa
 aaa
-aaa
+kKH
 aaa
 aaa
 aaa
@@ -248655,7 +248720,7 @@ cKz
 mHh
 cxD
 cxD
-kKH
+cxD
 cxD
 cxD
 aaj
@@ -269200,7 +269265,7 @@ bWR
 bYq
 bZF
 cba
-bZF
+vGc
 bVq
 bVq
 cgK

@@ -503,6 +503,7 @@ Pressure: [env.pressure]"}
 	var/list/areas_with_LS = list()
 	var/list/areas_with_intercom = list()
 	var/list/areas_with_camera = list()
+	var/list/areas_with_fire_alarm = list()
 
 	for(var/area/A in areas)
 		if(A && !(A.type in areas_all))
@@ -543,6 +544,11 @@ Pressure: [env.pressure]"}
 		if(A && !(A.type in areas_with_camera))
 			areas_with_camera.Add(A.type)
 
+	for(var/obj/machinery/firealarm/falarm)
+		var/area/A = get_area(falarm)
+		if(A && !(A.type in areas_with_fire_alarm))
+			areas_with_fire_alarm.Add(A.type)
+
 	var/list/areas_without_APC = areas_all - areas_with_APC
 	var/list/areas_without_air_alarm = areas_all - areas_with_air_alarm
 	var/list/areas_without_RC = areas_all - areas_with_RC
@@ -550,6 +556,7 @@ Pressure: [env.pressure]"}
 	var/list/areas_without_LS = areas_all - areas_with_LS
 	var/list/areas_without_intercom = areas_all - areas_with_intercom
 	var/list/areas_without_camera = areas_all - areas_with_camera
+	var/list/areas_without_fire_alarm = areas_all - areas_with_fire_alarm
 
 	var/error_str = "<h1>AREAS WITHOUT AN APC:</h1>"
 	for(var/areatype in areas_without_APC)
@@ -577,6 +584,10 @@ Pressure: [env.pressure]"}
 
 	error_str += "<h1>AREAS WITHOUT ANY CAMERAS:</h1>"
 	for(var/areatype in areas_without_camera)
+		error_str += "* [areatype]<br>"
+
+	error_str += "<h1>AREAS WITHOUT A FIRE ALARM:</h1>"
+	for(var/areatype in areas_without_fire_alarm)
 		error_str += "* [areatype]<br>"
 
 	var/datum/browser/popup = new(usr, "Area issues", usr.name, 300, 400)
