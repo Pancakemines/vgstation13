@@ -3839,6 +3839,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "checker";
@@ -6251,6 +6256,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "whitegreen"
@@ -6328,6 +6337,16 @@
 	icon_state = "white"
 	},
 /area/medical/genetics)
+"ckV" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
+/turf/simulated/floor{
+	icon_state = "showroomfloor"
+	},
+/area/security/medical)
 "clc" = (
 /obj/machinery/alarm{
 	pixel_y = 24
@@ -8895,6 +8914,11 @@
 	pixel_x = -1;
 	pixel_y = -2
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -10842,6 +10866,11 @@
 /obj/machinery/light/small{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
 /turf/simulated/floor{
 	icon_state = "dark vault full"
 	},
@@ -11179,6 +11208,11 @@
 /obj/item/clothing/glasses/sunglasses{
 	pixel_x = 3;
 	pixel_y = 3
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
 	},
 /turf/simulated/floor{
 	dir = 6;
@@ -12900,6 +12934,10 @@
 /obj/machinery/light{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor/carpet,
 /area/library)
 "ext" = (
@@ -13863,6 +13901,14 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"eQz" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
+/turf/simulated/floor/arcade,
+/area/science/rd)
 "eRg" = (
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden{
 	dir = 1
@@ -15599,6 +15645,14 @@
 /obj/machinery/chem_dispenser/brewer/mapping,
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/surface/jungle/zoned/outdoor_bar)
+"fzD" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
+/turf/simulated/floor,
+/area/supply/sorting)
 "fzM" = (
 /obj/effect/decal/cleanable/dirt,
 /obj/machinery/light/burnt{
@@ -17270,6 +17324,23 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor/plating,
 /area/research_outpost/med)
+"gcZ" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
+/turf/simulated/floor{
+	dir = 1;
+	icon_state = "brown";
+	tag = "icon-brown (NORTH)"
+	},
+/area/supply/storage)
 "gdh" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
@@ -20495,6 +20566,8 @@
 	icon_state = "0-2"
 	},
 /obj/structure/table,
+/obj/item/device/radio,
+/obj/item/device/radio,
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -27308,6 +27381,11 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -29238,6 +29316,11 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 4
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor,
 /area/science/shuttlebay)
 "kxa" = (
@@ -29964,6 +30047,11 @@
 "kIJ" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
 	},
 /turf/simulated/floor{
 	icon_state = "red"
@@ -30945,6 +31033,10 @@
 /turf/unsimulated/floor/planetary/path/jungle,
 /area/surface/jungle/fenced/trader/solars)
 "lga" = (
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "brown";
@@ -31307,6 +31399,11 @@
 	},
 /obj/machinery/light/small{
 	dir = 8
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
 	},
 /turf/simulated/floor{
 	dir = 1;
@@ -31794,6 +31891,16 @@
 	icon_state = "red"
 	},
 /area/security/main)
+"ltX" = (
+/obj/structure/bed,
+/obj/item/weapon/bedsheet/black,
+/obj/structure/curtain/open/bed,
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/sleep)
 "ltY" = (
 /obj/machinery/anomaly/hyperspectral,
 /obj/machinery/light_switch{
@@ -31941,6 +32048,11 @@
 /obj/machinery/alarm{
 	dir = 1;
 	pixel_y = -22
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
 	},
 /turf/simulated/floor{
 	dir = 6;
@@ -32510,6 +32622,21 @@
 	icon_state = "white"
 	},
 /area/centcom/test)
+"lHu" = (
+/obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
+	dir = 8;
+	initialize_directions = 11
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
+/turf/simulated/floor{
+	dir = 4;
+	icon_state = "red"
+	},
+/area/security/prison)
 "lHy" = (
 /obj/machinery/camera,
 /obj/structure/table,
@@ -32785,6 +32912,16 @@
 /obj/machinery/camera,
 /turf/unsimulated/floor/planetary/grass/jungle/no_flora,
 /area/surface/jungle/fenced)
+"lKP" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
+/turf/simulated/floor{
+	icon_state = "freezerfloor"
+	},
+/area/science/robotics)
 "lKW" = (
 /obj/machinery/bodyscanner{
 	dir = 1
@@ -33587,6 +33724,11 @@
 	},
 /obj/machinery/light,
 /obj/machinery/hologram/holopad,
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -34101,6 +34243,11 @@
 /obj/item/weapon/stock_parts/manipulator,
 /obj/item/weapon/stock_parts/manipulator,
 /obj/structure/table,
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	icon_state = "whitepurple"
 	},
@@ -38110,6 +38257,11 @@
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	icon_state = "whitepurple"
 	},
@@ -38528,6 +38680,10 @@
 	dir = 1
 	},
 /obj/machinery/flasher/portable,
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "dark-markings"
@@ -42400,6 +42556,11 @@
 /obj/machinery/media/receiver/boombox/wallmount{
 	pixel_y = -22
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
 /turf/simulated/floor/wood,
 /area/crew_quarters)
 "pfX" = (
@@ -42606,6 +42767,11 @@
 	},
 /obj/structure/cable/yellow{
 	icon_state = "4-8"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
 	},
 /turf/simulated/floor,
 /area/teleporter)
@@ -43653,6 +43819,10 @@
 	icon_state = "1-2"
 	},
 /obj/structure/bed/chair,
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "red"
@@ -47125,6 +47295,10 @@
 /area/surface/jungle/zoned/atmos_outside)
 "qLm" = (
 /obj/structure/bed/chair,
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor{
 	icon_state = "floorgrime"
 	},
@@ -48967,6 +49141,15 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/escape/centcom)
+"rtT" = (
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
+/turf/simulated/floor{
+	icon_state = "cult"
+	},
+/area/lawoffice)
 "rtV" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet/green,
@@ -49557,6 +49740,22 @@
 	},
 /turf/unsimulated/floor/planetary/path/jungle_plated,
 /area/surface/jungle/fenced)
+"rBT" = (
+/obj/structure/cable/yellow{
+	icon_state = "4-8"
+	},
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
+/turf/simulated/floor{
+	icon_state = "dark vault full"
+	},
+/area/bridge/meeting_room)
 "rCb" = (
 /obj/structure/table,
 /obj/item/stack/package_wrap,
@@ -51836,6 +52035,11 @@
 /obj/machinery/camera{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	icon_state = "red"
 	},
@@ -52266,6 +52470,11 @@
 /obj/machinery/portable_atmospherics/canister/nitrogen,
 /obj/item/clothing/mask/breath/vox,
 /obj/item/weapon/tank/nitrogen,
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "whiteblue"
@@ -52499,6 +52708,11 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
 	},
 /turf/simulated/floor{
 	icon_state = "grimy"
@@ -53464,6 +53678,16 @@
 	dir = 4
 	},
 /area/engineering/reactor_room)
+"sZc" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/security/warden)
 "sZq" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -54950,6 +55174,11 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 5
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -55254,6 +55483,11 @@
 /area/surface/jungle/zoned/atmos_outside)
 "tCU" = (
 /obj/machinery/atmospherics/pipe/manifold4w/supply/hidden,
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
 /turf/simulated/floor{
 	icon_state = "yellow";
 	dir = 4
@@ -56180,6 +56414,11 @@
 	dir = 4
 	},
 /obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
+	},
 /turf/simulated/floor{
 	dir = 10;
 	icon_state = "red"
@@ -56396,6 +56635,16 @@
 "tZv" = (
 /turf/unsimulated/wall/blastdoor,
 /area/centcom/specops)
+"uab" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/science/chargebay)
 "uad" = (
 /turf/unsimulated/floor/planetary/water/jungle,
 /area/surface/jungle/roid/vaults)
@@ -57418,6 +57667,10 @@
 /obj/structure/table,
 /obj/item/weapon/storage/belt/utility,
 /obj/item/device/multitool,
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
 /turf/simulated/floor{
 	dir = 1;
 	icon_state = "brown";
@@ -59179,6 +59432,11 @@
 /obj/machinery/camera{
 	dir = 8
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -59892,6 +60150,13 @@
 	icon_state = "whitegreen"
 	},
 /area/medical/medbay)
+"vmX" = (
+/obj/machinery/firealarm{
+	name = "_North Fire Alarm";
+	pixel_y = 26
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/captain)
 "vna" = (
 /obj/structure/closet/walllocker/defiblocker{
 	pixel_y = -30
@@ -59951,6 +60216,11 @@
 /obj/machinery/hologram/holopad,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 9
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	name = "_East Fire Alarm";
+	pixel_x = 26
 	},
 /turf/simulated/floor{
 	dir = 4;
@@ -61220,6 +61490,11 @@
 "vKa" = (
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 5
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	name = "_South Fire Alarm";
+	pixel_y = -26
 	},
 /turf/simulated/floor{
 	icon_state = "dark"
@@ -66424,6 +66699,11 @@
 	d1 = 1;
 	d2 = 2;
 	icon_state = "1-2"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	name = "_West Fire Alarm";
+	pixel_x = -26
 	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/hop)
@@ -108829,7 +109109,7 @@ mOy
 fPC
 ldV
 cnn
-vpp
+ckV
 xYb
 klP
 dnJ
@@ -117626,7 +117906,7 @@ wpq
 cqH
 sMS
 asz
-eEB
+sZc
 bci
 cfn
 mHK
@@ -119035,7 +119315,7 @@ ahG
 ukj
 vil
 iON
-vil
+lHu
 ahG
 hij
 pTF
@@ -123961,7 +124241,7 @@ nre
 wld
 buZ
 cIm
-dbd
+rtT
 aBs
 yjJ
 mxR
@@ -130255,7 +130535,7 @@ rTy
 pfB
 cEF
 fDD
-cEF
+fzD
 wOM
 pqu
 pes
@@ -130603,7 +130883,7 @@ gGy
 xJp
 ijD
 ntD
-rvZ
+gcZ
 pfB
 kqW
 tvl
@@ -135902,7 +136182,7 @@ nre
 apK
 hJr
 vWw
-mdE
+rBT
 dyE
 cGy
 uIJ
@@ -138364,7 +138644,7 @@ hXJ
 maR
 chG
 mSW
-vmo
+vmX
 vmo
 eae
 xYa
@@ -140464,7 +140744,7 @@ aRn
 mDQ
 mdM
 vcH
-bka
+uab
 etT
 aRn
 skj
@@ -140806,7 +141086,7 @@ ean
 nIj
 jeT
 vLr
-dGZ
+lKP
 fiQ
 jeT
 lgq
@@ -141504,7 +141784,7 @@ lIK
 lIK
 lIK
 jAP
-yaH
+ltX
 xTx
 vVN
 yaH
@@ -143618,7 +143898,7 @@ lIK
 lIK
 dMN
 xob
-fHS
+eQz
 hcH
 uGs
 hez
