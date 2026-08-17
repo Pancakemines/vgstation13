@@ -5759,6 +5759,9 @@
 	dir = 2;
 	icon_state = "pipe-c"
 	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/simulated/floor{
 	icon_state = "grimy"
 	},
@@ -8385,6 +8388,10 @@
 /area/supply/lobby)
 "arG" = (
 /obj/machinery/light,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor,
 /area/supply/lobby)
 "arH" = (
@@ -24152,6 +24159,10 @@
 /obj/machinery/atmospherics/unary/vent_pump{
 	on = 1
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -25649,6 +25660,10 @@
 	d1 = 4;
 	d2 = 8;
 	icon_state = "4-8"
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/simulated/floor,
 /area/crew_quarters/fitness)
@@ -37572,7 +37587,7 @@
 	},
 /obj/item/weapon/circuitboard/splicer,
 /turf/simulated/floor/plating,
-/area)
+/area/storage/tech)
 "bwC" = (
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 4
@@ -38417,6 +38432,10 @@
 /obj/machinery/atmospherics/pipe/manifold/cyan/visible,
 /obj/machinery/meter{
 	name = "Cooling"
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/simulated/floor,
 /area/tcomms/storage)
@@ -45332,6 +45351,9 @@
 	d2 = 8;
 	icon_state = "4-8"
 	},
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -46728,6 +46750,9 @@
 "bMV" = (
 /obj/structure/extinguisher_cabinet{
 	pixel_x = 32
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /turf/simulated/floor{
 	dir = 4;
@@ -48334,6 +48359,7 @@
 	tag_interior_door = "tcomm_airlock_interior";
 	tag_interior_sensor = "tcomm_int_airlock_sensor"
 	},
+/obj/item/device/radio,
 /turf/simulated/floor,
 /area/turret_protected/tcomms_control_room)
 "bPH" = (
@@ -51707,6 +51733,10 @@
 /obj/structure/closet/malf/suits,
 /obj/structure/disposalpipe/segment{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/simulated/floor,
 /area/turret_protected/tcomms_control_room)
@@ -60038,6 +60068,10 @@
 "ckA" = (
 /obj/machinery/light{
 	dir = 4
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
 	},
 /turf/simulated/floor{
 	icon_state = "white"
@@ -85521,6 +85555,9 @@
 	},
 /area/centcom/evac)
 "dnh" = (
+/obj/machinery/firealarm{
+	pixel_y = 28
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "checker";
@@ -89219,6 +89256,9 @@
 /obj/machinery/camera{
 	name = "Prisonsat Checkpoint";
 	network = list("JAIL","SS13")
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /turf/simulated/floor/wood,
 /area/prison/control)
@@ -114578,6 +114618,15 @@
 	},
 /turf/simulated/floor/plating/airless,
 /area/engineering/engine)
+"wZH" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/security/armory)
 "xon" = (
 /obj/item/weapon/broken_bottle,
 /turf/simulated/floor/plating,
@@ -114666,6 +114715,14 @@
 	icon_state = "floor3"
 	},
 /area/shuttle/escape_pod2)
+"ygO" = (
+/obj/machinery/power/emitter,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
+/turf/simulated/floor/plating,
+/area/engineering/engine_storage)
 "yho" = (
 /obj/machinery/computer/shuttle_control/bagel,
 /turf/simulated/floor,
@@ -250489,7 +250546,7 @@ bEz
 bGa
 bHQ
 bJE
-bLf
+ygO
 bLf
 bzL
 bQi
@@ -287144,7 +287201,7 @@ bUL
 bNm
 bXb
 bNm
-bNm
+wZH
 bLL
 chc
 chc
