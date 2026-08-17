@@ -17717,6 +17717,10 @@
 	pixel_y = 4
 	},
 /obj/item/device/radio,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "vault";
@@ -23018,6 +23022,10 @@
 	dir = 8;
 	icon_state = "warning_corner";
 	tag = "icon-warning_corner (WEST)"
+	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
 	},
 /turf/simulated/floor,
 /area/supply/storage)
@@ -32516,16 +32524,14 @@
 /turf/simulated/floor,
 /area/gateway)
 "bkZ" = (
-/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
-/obj/structure/sign/biohazard{
-	pixel_x = -32
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
 	},
 /turf/simulated/floor{
-	dir = 8;
-	icon_state = "yellowsiding";
-	tag = "icon-yellowsiding"
+	icon_state = "dark"
 	},
-/area/hallway/primary/fore)
+/area/prison/engineering)
 "bla" = (
 /obj/structure/cable{
 	d1 = 2;
@@ -32546,6 +32552,10 @@
 "blb" = (
 /obj/structure/disposalpipe/segment,
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/simulated/floor,
 /area/gateway)
 "blc" = (
@@ -61984,6 +61994,10 @@
 "clQ" = (
 /obj/structure/closet/wardrobe/red,
 /obj/item/toy/gasha/femsec,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "darkred"
@@ -69487,6 +69501,10 @@
 	dir = 8
 	},
 /obj/effect/landmark/xtra_cleanergrenades,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
 /turf/simulated/floor{
 	icon_state = "floorgrime"
 	},
@@ -85474,6 +85492,10 @@
 /obj/machinery/camera{
 	name = "Theatre Backstage"
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	dir = 9;
 	icon_state = "escape"
@@ -88368,6 +88390,10 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
 	},
 /turf/simulated/floor,
 /area/crew_quarters/holocontrol)
@@ -91872,6 +91898,9 @@
 "drY" = (
 /obj/machinery/camera{
 	name = "Security Lobby North"
+	},
+/obj/machinery/firealarm{
+	pixel_y = 28
 	},
 /turf/simulated/floor{
 	dir = 1;
@@ -96951,10 +96980,11 @@
 /obj/item/weapon/folder/red,
 /obj/item/weapon/storage/box/labels,
 /obj/item/weapon/hand_labeler,
-/obj/machinery/status_display{
-	pixel_x = -32
-	},
 /obj/item/device/camera_film,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
 /turf/simulated/floor/carpet,
 /area/security/detectives_office)
 "dAK" = (
@@ -107493,6 +107523,9 @@
 	name = "Prison Checkpoint";
 	network = list("JAIL","SS13")
 	},
+/obj/machinery/firealarm{
+	pixel_y = 27
+	},
 /turf/simulated/floor/wood,
 /area/prison/control)
 "dRD" = (
@@ -112513,6 +112546,9 @@
 	},
 /area/prison/medical)
 "eaV" = (
+/obj/machinery/firealarm{
+	pixel_y = 27
+	},
 /turf/simulated/floor{
 	dir = 5;
 	icon_state = "checker";
@@ -129456,6 +129492,10 @@
 /obj/machinery/atmospherics/pipe/simple/supply/hidden{
 	dir = 9
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
 /turf/simulated/floor{
 	icon_state = "dark"
 	},
@@ -130495,6 +130535,13 @@
 /area/maintenance/auxcharge{
 	name = "Power Substation"
 	})
+"jbm" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
+/turf/simulated/floor/wood,
+/area/crew_quarters/courtroom)
 "jeP" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
 	dir = 4
@@ -130770,6 +130817,14 @@
 	icon_state = "dark"
 	},
 /area/medical/sleeper)
+"lmj" = (
+/obj/machinery/firealarm{
+	pixel_y = 26
+	},
+/turf/simulated/floor/plating{
+	icon_state = "asteroidplating"
+	},
+/area/engineering/aux_storage)
 "lmw" = (
 /obj/structure/disposalpipe/segment{
 	dir = 4
@@ -131119,6 +131174,15 @@
 /area/maintenance/auxcharge{
 	name = "Power Substation"
 	})
+"npv" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -26
+	},
+/turf/simulated/floor{
+	icon_state = "dark"
+	},
+/area/storage/tech)
 "nsf" = (
 /obj/structure/reagent_dispensers/watertank,
 /obj/machinery/camera{
@@ -131460,6 +131524,10 @@
 /turf/simulated/floor/plating/airless,
 /area/engine/magma_engine)
 "pGD" = (
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
 /turf/simulated/floor/carpet,
 /area/crew_quarters/hop)
 "pPt" = (
@@ -131622,11 +131690,36 @@
 	icon_state = "4-8"
 	},
 /obj/machinery/atmospherics/pipe/manifold/supply/hidden,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "browncorner"
 	},
 /area/engineering/engineering_auxiliary)
+"qTq" = (
+/obj/machinery/atmospherics/pipe/simple/scrubbers/hidden{
+	dir = 4
+	},
+/obj/structure/disposalpipe/segment{
+	dir = 4
+	},
+/obj/structure/cable{
+	d1 = 4;
+	d2 = 8;
+	icon_state = "4-8"
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -27
+	},
+/turf/simulated/floor{
+	icon_state = "brownold";
+	tag = "icon-brownold"
+	},
+/area/engineering/engine)
 "qVh" = (
 /obj/machinery/power/apc{
 	name = "_South APC";
@@ -131825,6 +131918,13 @@
 	},
 /turf/simulated/floor/shuttle,
 /area/shuttle/exploration)
+"sBQ" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 28
+	},
+/turf/simulated/floor/plating,
+/area/tcomms/storage2)
 "sDk" = (
 /obj/structure/closet,
 /obj/item/device/radio,
@@ -173620,7 +173720,7 @@ bpX
 bpX
 bpX
 bpX
-bsY
+lmj
 bsY
 bpS
 bvK
@@ -185688,7 +185788,7 @@ bYK
 caT
 cdn
 cfM
-chT
+qTq
 ckJ
 cmU
 cph
@@ -190215,7 +190315,7 @@ cud
 cwm
 cyE
 cAI
-cyH
+npv
 cEd
 cws
 cnl
@@ -194708,7 +194808,7 @@ bkI
 bnC
 bqp
 btp
-btp
+sBQ
 byO
 bBD
 bkI
@@ -216290,7 +216390,7 @@ bgm
 bgm
 bgm
 bgm
-bkZ
+bgm
 bnT
 bqH
 btG
@@ -228869,7 +228969,7 @@ cuZ
 cxe
 czu
 cBt
-cvb
+jbm
 cET
 cGI
 cIA
@@ -330339,7 +330439,7 @@ dLd
 dLd
 dLd
 dNX
-dLd
+bkZ
 dKq
 dLd
 dQg
