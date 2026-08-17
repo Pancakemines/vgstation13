@@ -5807,6 +5807,10 @@
 "amh" = (
 /obj/structure/bed,
 /obj/item/weapon/bedsheet,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor,
 /area/janitor2)
 "ami" = (
@@ -10550,6 +10554,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "whiteyellow"
@@ -13546,6 +13554,10 @@
 /obj/machinery/atmospherics/pipe/manifold/scrubbers/hidden{
 	dir = 1
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/simulated/floor,
 /area/turret_protected/tcomms_control_room)
 "aAM" = (
@@ -15884,6 +15896,10 @@
 /obj/machinery/light{
 	dir = 8
 	},
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
 /turf/simulated/floor{
 	icon_state = "dark neutral corner";
 	tag = "icon-dark neutral corner (WEST)"
@@ -15991,6 +16007,10 @@
 /area/medical/cmo)
 "aEZ" = (
 /obj/structure/disposalpipe/segment,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "darkblue"
@@ -16262,6 +16282,10 @@
 	icon_state = "1-8"
 	},
 /obj/structure/closet/wardrobe/red,
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	dir = 6;
 	icon_state = "red"
@@ -32189,6 +32213,10 @@
 	d2 = 2;
 	icon_state = "1-2"
 	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/simulated/floor{
 	dir = 8;
 	icon_state = "neutralfull"
@@ -33514,9 +33542,6 @@
 /area/medical/chemistry)
 "bjT" = (
 /obj/item/device/radio/intercom{
-	broadcasting = 1;
-	dir = 8;
-	listening = 0;
 	name = "Station Intercom (General)";
 	pixel_x = -28
 	},
@@ -35976,6 +36001,10 @@
 	pixel_y = -3;
 	pixel_x = -1
 	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	icon_state = "white"
 	},
@@ -36380,6 +36409,10 @@
 	d1 = 1;
 	d2 = 8;
 	icon_state = "1-8"
+	},
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
 	},
 /turf/simulated/floor{
 	dir = 1;
@@ -69173,6 +69206,14 @@
 /area/security/brig)
 "cCR" = (
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
 /turf/simulated/floor{
 	dir = 4;
 	icon_state = "darkred"
@@ -70793,6 +70834,10 @@
 /obj/structure/table,
 /obj/item/weapon/folder/blue,
 /obj/item/weapon/stamp/hop,
+/obj/machinery/firealarm{
+	dir = 1;
+	pixel_y = -24
+	},
 /turf/simulated/floor,
 /area/crew_quarters/hop)
 "cFB" = (
@@ -71541,8 +71586,9 @@
 	},
 /area/hallway/secondary/exit)
 "cHa" = (
-/obj/machinery/newscaster{
-	pixel_x = -32
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
 	},
 /turf/simulated/floor/wood,
 /area/bridge/meeting_room)
@@ -110509,6 +110555,16 @@
 	},
 /turf/simulated/floor/plating,
 /area/shuttle/escape_pod3)
+"nxm" = (
+/obj/machinery/firealarm{
+	dir = 8;
+	pixel_x = -24
+	},
+/turf/simulated/floor{
+	dir = 8;
+	icon_state = "dark vault stripe"
+	},
+/area/engineering/antimatter_room)
 "nAv" = (
 /obj/structure/shuttle/engine/propulsion/burst{
 	dir = 8
@@ -110673,6 +110729,13 @@
 /obj/machinery/atmospherics/pipe/simple/scrubbers/hidden,
 /turf/simulated/floor/carpet,
 /area/crew_quarters/captain)
+"oAg" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
+/turf/simulated/floor/plating,
+/area/storage/tech)
 "oCo" = (
 /obj/machinery/door_control{
 	id_tag = "Singularity";
@@ -111367,6 +111430,15 @@
 	icon_state = "white"
 	},
 /area/science/hallway)
+"tgM" = (
+/obj/machinery/firealarm{
+	dir = 4;
+	pixel_x = 24
+	},
+/turf/simulated/floor{
+	icon_state = "floorgrime"
+	},
+/area/science/storage)
 "tpu" = (
 /obj/structure/rack,
 /turf/simulated/floor/shuttle,
@@ -217875,7 +217947,7 @@ aSz
 aSz
 aSz
 aLH
-aKg
+tgM
 bnc
 aLI
 aLH
@@ -251014,7 +251086,7 @@ aPP
 aOx
 aTh
 aUW
-aPN
+oAg
 aXS
 aZp
 baX
@@ -261064,7 +261136,7 @@ bfO
 bhH
 biX
 bkH
-bmp
+nxm
 bmp
 bmp
 bmp
