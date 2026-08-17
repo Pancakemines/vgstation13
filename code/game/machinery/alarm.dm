@@ -532,11 +532,12 @@ var/global/list/air_alarms = list()
 		mode=AALARM_MODE_FILL
 		apply_mode()
 
-	var/datum/airalarm_threshold/current_pressure_threshold = config.pressure_threshold
-	var/target_pressure = (current_pressure_threshold.min_1() + current_pressure_threshold.max_1())/2
-	if (mode==AALARM_MODE_FILL && environment.return_pressure()>=target_pressure*0.95)
-		mode = AALARM_MODE_SCRUBBING
-		apply_mode()
+	if (mode==AALARM_MODE_FILL)
+		var/datum/airalarm_threshold/current_pressure_threshold_fill = config.pressure_threshold
+		var/target_pressure_fill = (current_pressure_threshold_fill.min_1() + current_pressure_threshold_fill.max_1())/2
+		if(environment.return_pressure()>=target_pressure_fill*0.95)
+			mode = AALARM_MODE_SCRUBBING
+			apply_mode()
 
 	//atmos computer remote control stuff
 	switch(rcon_setting)
@@ -551,21 +552,31 @@ var/global/list/air_alarms = list()
 		*/
 		if(RCON_YES)
 			remote_control = 1
+
 	if(auto_suppress)
 		var/area/this_area = get_area(src)
 		if(this_area.fire)
+			for(var/device_id in this_area.air_scrub_names)
+				send_signal(device_id, list("power"= 1, "checks" = 0))
+			for(var/device_id in this_area.air_vent_names)
+				send_signal(device_id, list("power"= 1, "checks"= 0))
 			preset_key = "Fire Suppression"
 			apply_preset(1)
 			auto_suppress = FALSE
 			config.suppression_mode = FALSE
 
-	var/target_temp = config.target_temperature
-	if(preset_key == "Fire Suppression" && environment.return_temperature()<=target_temp*0.95)
-		preset_key = "Human"
-		apply_preset(1)
-		auto_suppress = TRUE
-		config.suppression_mode = TRUE
-
+	if(preset_key == "Fire Suppression")
+		var/datum/airalarm_threshold/current_pressure_threshold_suppress = config.pressure_threshold
+		var/target_pressure_suppress = (current_pressure_threshold_suppress.min_1() + current_pressure_threshold_suppress.max_1())/2
+		var/target_temp = config.target_temperature
+		if(environment.return_temperature() <= target_temp*1.05 && environment.return_pressure() <= target_pressure_suppress*1.05)
+			var/area/this_area = get_area(src)
+			preset_key = "Human"
+			apply_preset(1)
+			auto_suppress = TRUE
+			config.suppression_mode = TRUE
+			for(var/device_id in this_area.air_scrub_names)
+				send_signal(device_id, list("power"= 1, "checks" = 1))
 	return
 
 /obj/machinery/alarm/proc/calculate_local_danger_level(const/datum/gas_mixture/environment)
