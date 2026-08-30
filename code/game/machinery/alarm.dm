@@ -7,7 +7,9 @@
 #define AALARM_MODE_PANIC		3 //constantly sucks all air
 #define AALARM_MODE_CYCLE		4 //sucks off all air, then refill and switches to scrubbing
 #define AALARM_MODE_FILL		5 //emergency fill
-#define AALARM_MODE_OFF			6 //Shuts it all down.
+#define AALARM_MODE_FIRE		6 //Turns vent and scrubber checks off to remove oxygen and pump nitrogen as fast as possible.
+#define AALARM_MODE_OFF			7 //Shuts it all down.
+
 
 #define AALARM_SCREEN_MAIN		1
 #define AALARM_SCREEN_VENT		2
@@ -556,11 +558,8 @@ var/global/list/air_alarms = list()
 	if(auto_suppress)
 		var/area/this_area = get_area(src)
 		if(this_area.fire)
-			for(var/device_id in this_area.air_scrub_names)
-				send_signal(device_id, list("power"= 1, "checks" = 0))
-			for(var/device_id in this_area.air_vent_names)
-				send_signal(device_id, list("power"= 1, "checks"= 0))
 			preset_key = "Fire Suppression"
+			mode = AALARM_MODE_FIRE
 			apply_preset(1)
 			auto_suppress = FALSE
 			config.suppression_mode = FALSE
@@ -571,12 +570,12 @@ var/global/list/air_alarms = list()
 		var/target_temp = config.target_temperature
 		if(environment.return_temperature() <= target_temp*1.05 && environment.return_pressure() <= target_pressure_suppress*1.05)
 			var/area/this_area = get_area(src)
+			this_area.firereset()
 			preset_key = "Human"
+			mode = AALARM_MODE_SCRUBBING
 			apply_preset(1)
 			auto_suppress = TRUE
 			config.suppression_mode = TRUE
-			for(var/device_id in this_area.air_scrub_names)
-				send_signal(device_id, list("power"= 1, "checks" = 1))
 	return
 
 /obj/machinery/alarm/proc/calculate_local_danger_level(const/datum/gas_mixture/environment)
@@ -779,7 +778,7 @@ var/global/list/air_alarms = list()
 				if(!presetdata)
 					presetdata = new /datum/airalarm_configuration/preset/human()
 
-				var/list/signal_data = list("power"= 1, "scrubbing"= 1, "panic_siphon"= 0)
+				var/list/signal_data = list("power"= 1, "checks"= 1, "scrubbing"= 1, "panic_siphon"= 0)
 				for(var/gas_id in XGM.gases)
 					signal_data[gas_id + "_scrub"] = (gas_id in presetdata.scrubbed_gases)
 				send_signal(device_id,  signal_data)
@@ -809,6 +808,12 @@ var/global/list/air_alarms = list()
 				send_signal(device_id, list("power"= 0) )
 			for(var/device_id in this_area.air_vent_names)
 				send_signal(device_id, list("power"= 0) )
+
+		if(AALARM_MODE_FIRE)
+			for(var/device_id in this_area.air_scrub_names)
+				send_signal(device_id, list("power"= 1, "checks" = 0))
+			for(var/device_id in this_area.air_vent_names)
+				send_signal(device_id, list("power"= 1, "checks"= 0))
 
 // This sets our danger level, and, if it's changed, forces a new election of danger levels.
 /obj/machinery/alarm/proc/setDangerLevel(var/new_danger_level)
@@ -935,6 +940,7 @@ var/global/list/air_alarms = list()
 		/*AALARM_MODE_PANIC*/ list("name"="Panic",       "desc"="Siphons air out of the room"),\
 		/*AALARM_MODE_CYCLE*/ list("name"="Cycle",       "desc"="Siphons air before replacing"),\
 		/*AALARM_MODE_FILL*/ list("name"="Fill",        "desc"="Shuts off scrubbers and opens vents"),\
+		/*AALARM_MODE_FIRE*/ list("name"="Fire",        "desc"="Removes checks on vents and scrubbers"),\
 		/*AALARM_MODE_OFF*/ list("name"="Off",         "desc"="Shuts off vents and scrubbers"))
 	data["mode"]=mode
 
