@@ -116,6 +116,11 @@
 		attached_to.verbs -= new/obj/item/clothing/accessory/holster/verb/holster_verb(attached_to,holster_verb_name)
 	..()
 
+/obj/item/clothing/accessory/holster/Exited(var/atom/movable/Obj, var/atom/newloc)
+	..()
+	holstered = null
+	update_icon()
+
 //
 // Handguns
 //
