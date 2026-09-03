@@ -118,8 +118,9 @@
 
 /obj/item/clothing/accessory/holster/Exited(var/atom/movable/Obj, var/atom/newloc)
 	..()
-	holstered = null
-	update_icon()
+	if(holstered == Obj)
+		holstered = null
+		update_icon()
 
 //
 // Handguns
