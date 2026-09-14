@@ -670,13 +670,11 @@
 
 /obj/structure/reagent_dispensers/cauldron/New()
 	..()
-	fast_objects.Add(src)
 	all_reagent_containers.Add(src)
 
 /obj/structure/reagent_dispensers/cauldron/Destroy()
 	thermal_entropy_containers.Remove(src)
 	all_reagent_containers.Remove(src)
-	fast_objects.Remove(src)
 	. = ..()
 
 /obj/structure/reagent_dispensers/cauldron/examine(mob/user)
