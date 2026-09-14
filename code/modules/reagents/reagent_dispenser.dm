@@ -711,21 +711,6 @@
 			return
 	..()
 
-/obj/structure/reagent_dispensers/cauldron/process()
-	if(!reagents?.total_volume)
-		return
-
-	if(!isturf(loc))
-		return
-
-	var/turf/T = loc
-	var/obj/machinery/space_heater/campfire/C = locate(/obj/machinery/space_heater/campfire) in T
-
-	if(!C || !C.can_cook())
-		return
-
-	reagents.heating(C.cook_energy(), C.cook_temperature())
-
 /obj/structure/reagent_dispensers/cauldron/on_reagent_change()
 	update_icon()
 	process_temperature()
